@@ -1,4 +1,4 @@
-import{ test, expect } from '@playwright/test'
+import{ test, expect, firefox } from '@playwright/test'
 
 test('Context fixture @broswer', async ({ context }) => {
 
@@ -53,4 +53,15 @@ test('Browser fixture @browser', async ({ browser }) =>{
     await page4.bringToFront();
     await page4.goto('https://mail.google.com/');
     await page4.waitForTimeout(2000);
+});
+
+//Custom context and browser
+test('custom context & custom browser @custom', async () => {
+
+    let browser = await firefox.launch();
+    let context = await browser.newContext();
+    let page = await context.newPage();
+
+    page.goto('https://www.facebook.com/login.php');
+    await page.waitForTimeout(4000);
 });

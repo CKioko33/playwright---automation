@@ -12,7 +12,7 @@
     "test:tag:headless": "npx playwright test --grep @start-app-step",
     "test:tag:headed": "npx playwright test --grep @payment-plan-step --headed",
     "test:tag:headed:payment-plan": "npx playwright test --grep @review-plan-step --headed",
-    "test:tag:headed:browser": "npx playwright test --grep @browser --headed",
+    "test:tag:headed:browser": "npx playwright test --grep @custom --headed",
     "report": "npx playwright show-report"
   },
   "keywords": [],
